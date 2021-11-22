@@ -16,13 +16,11 @@ class UsersController extends Controller{
         return view('users', compact('username')); 
     }
 
-    public function test(){
-        return redirect(
-            route(
-                'user-name',
-                ['name' => 'brito']
-            )
-        );
+    public function test(Request $request){
+        $this->validate($request, [
+            'name' => 'required',
+            'age' => 'required|numeric'
+        ]);
     }
 
 

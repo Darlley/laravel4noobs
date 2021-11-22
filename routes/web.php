@@ -18,5 +18,11 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/user/me', [UsersController::class, 'getMeProfile']);
+Route::get('/vfff/me', [UsersController::class, 'getMeProfile'])->name('user-name');
 Route::get('/user/{username}', [UsersController::class, 'getProfile']);
+Route::get('/test', [UsersController::class, 'test']);
+
+
+
+
+// Route::get('/test', [UsersController::class, 'test']);

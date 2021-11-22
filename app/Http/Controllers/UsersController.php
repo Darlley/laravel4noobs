@@ -15,4 +15,23 @@ class UsersController extends Controller{
     public function getProfile(string $username){
         return view('users', compact('username')); 
     }
+
+    public function test(){
+        return redirect(
+            route(
+                'user-name',
+                ['name' => 'brito']
+            )
+        );
+    }
+
+
+    // public function test(){
+    //     return redirect(
+    //         route(
+    //             'user-profile', 
+    //             ['username' => 'darlley']
+    //         )
+    //     );
+    // }
 }

@@ -7,17 +7,19 @@
     <title>Page</title>
 </head>
 <body>
-    <marquee behavior="" direction="">
-        {{ $username }}
-        @if(1 !== 1)
-            - deu certo
-        @else
-            - não deu certo
-        @endif
+    @isset($username)
+        
+        <marquee behavior="" direction="">
+            {{ $username }}
+        </marquee>
 
-        @foreach ($args as $arg)
-            {{ $arg }}
-        @endforeach
-    </marquee>
+        @if($username == 'Darlley')
+            <h1>Nome esperado "{{ $username }}"</h1>
+        @endif
+        @unless ($username == 'Darlley')
+            <h1>Nome não esperado "{{ $username }}"</h1>
+        @endunless
+
+    @endisset
 </body>
 </html>

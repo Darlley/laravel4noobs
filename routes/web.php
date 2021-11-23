@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 // use App\Http\Controllers\UsersController;
+use App\Http\Controllers\PostsController;
 use App\Http\Controllers\LandingController;
 
 /*
@@ -17,6 +18,8 @@ use App\Http\Controllers\LandingController;
 
 Route::get('/', [LandingController::class, 'getLandingPage']);
 Route::get('/about', [LandingController::class, 'getAboutPage']);
+Route::get('/posts', [PostsController::class, 'getPosts']);
+Route::get('/posts/{post}', [PostsController::class, 'getPost']);
 
 // Route::get('/users/me', [UsersController::class, 'getMeProfile'])->name('username');
 // Route::get('/user/{username}', [UsersController::class, 'getProfile']);

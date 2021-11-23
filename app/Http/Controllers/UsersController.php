@@ -13,7 +13,13 @@ class UsersController extends Controller{
     }
 
     public function getProfile(string $username){
-        return view('users', compact('username')); 
+        $args = ['a', 'b', 'c', 1, 2, 3];
+        return view(
+            'users', 
+            compact(
+                ['username', 'args']
+            )
+        );
     }
 
     public function test(TestRequest $request){}
